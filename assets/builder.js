@@ -45,8 +45,8 @@ Game.Builder.prototype._generateLevel = function() {
     }
     // Setup the cave generator
     var generator = new ROT.Map.Cellular(this._width, this._height);
-    generator.randomize(0.5);
-    var totalIterations = 3;
+    generator.randomize(1.5);
+    var totalIterations = 30;
     // Iteratively smoothen the map
     for (var i = 0; i < totalIterations - 1; i++) {
         generator.create();
