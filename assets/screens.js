@@ -8,6 +8,7 @@ Game.Screen.startScreen = {
         // Render our prompt to the screen
         display.drawText(1,1, "%c{yellow}Javascript Roguelike");
         display.drawText(1,2, "Press [Enter] to start!");
+        display.drawText(1,3, "Modified Edition");
     },
     handleInput: function(inputType, inputData) {
         // When [Enter] is pressed, go to the play screen
@@ -27,8 +28,8 @@ Game.Screen.playScreen = {
     enter: function() {
         // Create a map based on our size parameters
         var width = 100;
-        var height = 48;
-        var depth = 6;
+        var height = 100;
+        var depth = 60;
         // Create our map from the tiles and player
         this._player = new Game.Entity(Game.PlayerTemplate);
         var tiles = new Game.Builder(width, height, depth).getTiles();
@@ -562,6 +563,7 @@ Game.Screen.gainStatScreen = {
     render: function(display) {
         var letters = 'abcdefghijklmnopqrstuvwxyz';
         display.drawText(0, 0, 'Choose a stat to increase: ');
+        display.drawText(0, 1, '(this menu sucks)');
 
         // Iterate through each of our options
         for (var i = 0; i < this._options.length; i++) {
